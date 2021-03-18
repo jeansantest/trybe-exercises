@@ -1,0 +1,32 @@
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+    font-weight: lighter;
+    font-style: italic; 
+}
+
+body {
+    font-size: 16px;
+}
+
+.list-style {
+    line-height: 50px;
+    text-align: center;
+    text-decoration: line-through;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#red {
+    background-color: red;
+}
+
+#brown {
+    background-color: brown;
+}
