@@ -1,0 +1,49 @@
+div:hover {
+  border: 2px solid;
+}
+
+#div1:hover {
+  border-color: blue;
+}
+
+#div2:hover {
+  border-color: brown;
+}
+
+#div3:hover {
+  border-color: cadetblue;
+  font-size: 30px;
+  border-width: 4px;
+}
+
+#div4:hover {
+  border-color: chartreuse;
+}
+
+#div5:hover {
+  border-color: darkgray;
+}
+
+#h31 {
+  color: blue;
+}
+
+#h32 {
+  color: brown;
+}
+
+#h33 {
+  color: cadetblue;
+}
+
+#h34 {
+  color: chartreuse;
+}
+
+#h35 {
+  color: darkgray;
+}
+
+h3 {
+  font-style: italic;
+}
