@@ -35,3 +35,5 @@ if (d % 2 == 1 || e % 2 == 1 || f % 2 == 1) {
 } else {
   console.log(false)
 }
+
+/* Fonte: https://pt.stackoverflow.com/questions/64058/saber-se-o-numero-%C3%A9-%C3%ADmpar-ou-par/64059 */
