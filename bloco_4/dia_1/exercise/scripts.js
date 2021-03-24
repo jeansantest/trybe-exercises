@@ -34,4 +34,33 @@ if (tri1 + tri2 + tri3 == 180) {
   console.log(false)
 }
 
+let peça = "RooK";
 
+switch (peça.toLowerCase()) {
+  case "bishop":
+    console.log("moves any number of vacant squares diagonally in a straight line");
+    break;
+
+  case "rook":
+    console.log("moves any number of vacant squares forwards, backwards, left, or right in a straight line");
+    break;
+    
+  case "queen":
+    console.log("moves any number of vacant squares in any direction");
+    break;
+
+  case "king":
+    console.log("moves exactly one vacant square in any direction");
+    break; 
+    
+  case "knight":
+    console.log("moves on an extended diagonal from one corner of any 2×3 rectangle of squares to the furthest opposite corner");
+    break;
+
+  case "pawn":
+    console.log("moves forward exactly one square, or optionally, two squares when on its starting square");
+    break;
+    
+  default:
+    console.log("Ocorreu algum erro")  
+}
