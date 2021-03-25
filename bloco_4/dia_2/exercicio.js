@@ -22,6 +22,8 @@ for (let i = 0; i < numbers.length; i += 1) {
 }
 console.log(higherNumber)
 
+
+
 /*Utilizado para resolver o exercício 2:
 https://www.treinaweb.com.br/blog/javascript-metodos-de-arrays-que-voce-precisa-conhecer/#:~:text=reduce(),os%20valores%20de%20um%20Array.
 exercício 3:
