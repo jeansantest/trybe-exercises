@@ -10,3 +10,5 @@ for (let index = 1; index < numbers.length; index += 1) {
 }
 
 console.log(numbers)
+
+/*Explicação do Matheus Inacio no plantão abriu muito a mente para esse exercício*/
