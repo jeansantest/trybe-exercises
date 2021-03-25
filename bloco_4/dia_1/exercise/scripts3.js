@@ -10,7 +10,7 @@ if (lucro >= 0) {
   console.log('Não tem lucro, algo deu errado')
 }
 
-let salarioBruto = 4000;
+let salarioBruto = 8000;
 let aliquota8 = 8 / 100;
 let aliquota9 = 9 / 100;
 let aliquota11 = 11 / 100;
@@ -27,8 +27,8 @@ if (salarioBruto < 0) {
   INSS = salarioBruto * aliquota9;
 } else if (salarioBruto <= 5189.82) {
   INSS = salarioBruto * aliquota11;
-} else {
-  INSS = salarioBruto * aliquotaMax;
+} else if (salarioBruto > 5189.82) {
+  INSS = aliquotaMax;
 }
 
 let salarioBase = salarioBruto - INSS
