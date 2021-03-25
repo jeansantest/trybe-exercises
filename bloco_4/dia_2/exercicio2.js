@@ -11,3 +11,11 @@ console.log('São', impares , 'valores ímpares')
 } else {
   console.log('nenhum valor ímpar encontrado')
 }
+
+let lowerNumber = 1000;
+for (let i = 0; i < numbers.length; i += 1) {
+  if(numbers[i] < lowerNumber) {
+    lowerNumber = numbers[i]
+  }
+}
+console.log(lowerNumber)
