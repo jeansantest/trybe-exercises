@@ -108,6 +108,15 @@
       divMain.appendChild(createElementH3())
       divMain.appendChild(createElementH3())
       divMain.appendChild(createElementH3())
+      //Alterações e remoções
+      //1
+      createH1.className = 'title'
+      //2
+      let tagH3 = document.getElementsByTagName('h3')
+      for (let index = 0; index < tagH3.length; index += 1) {
+        let tags = tagH3[index]
+        tags.className = 'description'
+      }
     </script>
   </body>
 </html>
