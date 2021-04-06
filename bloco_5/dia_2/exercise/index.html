@@ -63,8 +63,14 @@
       createH1.innerText = 'Exercício 5.2 - JavaScript DOM'
       body.appendChild(createH1)
       //2
-      let createDiv = document.createElement('div')
-      body.appendChild(createDiv)
+      let createDivMain = document.createElement('div')
+      createDivMain.className = 'main-content'
+      body.appendChild(createDivMain)
+      //3
+      let divMain = document.querySelector('.main-content')
+      let createDivCenter = document.createElement('div')
+      createDivCenter.className = 'center-content'
+      divMain.appendChild(createDivCenter)
     </script>
   </body>
 </html>
