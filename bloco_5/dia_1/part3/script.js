@@ -15,3 +15,4 @@ let noEmergencyH3 = document.querySelectorAll('.no-emergency-tasks h3');
 for(let key of noEmergencyH3) {
   key.style.backgroundColor = 'black'
 }
+
