@@ -94,11 +94,14 @@
       //8
       let list = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
       let divRight = document.querySelector('.right-content')
+      let createUl = document.createElement('ul')
+      divRight.appendChild(createUl)
       for (let index = 0; index < list.length; index += 1) {
         let listItem = list[index]
-        let createUl = document.createElement('ul')
-        createUl.innerText = listItem
-        divRight.appendChild(createUl)
+        let createLi = document.createElement('li')
+        createLi.innerText = listItem
+        createLi.className = 'lista'
+        createUl.appendChild(createLi)
       }
       //9
       function createElementH3 () {
@@ -123,6 +126,16 @@
       createDivRight.style.marginRight = 'auto'
       //5
       createDivCenter.parentElement.style.backgroundColor = 'green'
+      //6
+      let lista = document.querySelectorAll('.lista')
+      for (let index = 0; index < lista.length; index += 1) {
+        let element = lista[index]
+        if (element.innerText.includes('dez')) {
+          createUl.removeChild(element)
+        } if (element.innerText.includes('nove')) {
+          createUl.removeChild(element)
+        }
+      }
     </script>
   </body>
 </html>
