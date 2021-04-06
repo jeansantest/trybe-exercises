@@ -85,6 +85,22 @@
       createDivRight.className = 'right-content'
       divMain.appendChild(createDivRight)
       //7
+      let divLeft = document.querySelector('.left-content')
+      let createImg = document.createElement('img')
+      createImg.src = 'https://picsum.photos/200'
+      createImg.className = 'small-image'
+      divLeft.appendChild(createImg)
+      /* https://pt.stackoverflow.com/questions/10881/como-substituir-o-src-de-uma-tag-img */
+      //8
+      let list = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+      let divRight = document.querySelector('.right-content')
+      for (let index = 0; index < list.length; index += 1) {
+        let listItem = list[index]
+        let createUl = document.createElement('ul')
+        createUl.innerText = listItem
+        divRight.appendChild(createUl)
+      }
+      //9
     </script>
   </body>
 </html>
