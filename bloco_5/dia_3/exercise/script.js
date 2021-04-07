@@ -68,3 +68,13 @@ function clickColor() {
   })
 };
 clickColor();
+
+function fridayButton(fridayButton) {
+  let buttonContainer = document.querySelector('.buttons-container')
+  let button = document.createElement('button')
+  let buttonId = 'btn-friday'
+  button.innerText = fridayButton
+  button.id = buttonId
+  buttonContainer.appendChild(button)
+}
+fridayButton('Sexta-feira')
