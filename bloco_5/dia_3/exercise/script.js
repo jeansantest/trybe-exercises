@@ -51,3 +51,20 @@ function feriadosBotao(buttonName) {
   buttonContainer.appendChild(button)
 }
 feriadosBotao('Feriados')
+
+function clickColor() {
+  let holidayButton = document.querySelector('#btn-holiday')
+  let allHoliday = document.querySelectorAll('.holiday')
+  let backgroundColor = 'rgb(238,238,238)'
+  let newColor = 'green'
+  holidayButton.addEventListener('click', function () {
+    for (let index = 0; index < allHoliday.length; index += 1) {
+      if (allHoliday[index].style.backgroundColor === newColor) {
+        allHoliday[index].style.backgroundColor = backgroundColor;
+      } else {
+        allHoliday[index].style.backgroundColor = newColor;
+      }
+    }
+  })
+};
+clickColor();
