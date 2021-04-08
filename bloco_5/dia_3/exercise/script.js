@@ -52,7 +52,7 @@ function feriadosBotao(buttonName) {
 }
 feriadosBotao('Feriados')
 
-function clickColor() {
+function clickColorHoliday() {
   let holidayButton = document.querySelector('#btn-holiday')
   let allHoliday = document.querySelectorAll('.holiday')
   let backgroundColor = 'rgb(238,238,238)'
@@ -67,7 +67,7 @@ function clickColor() {
     }
   })
 };
-clickColor();
+clickColorHoliday();
 
 function fridayButton(fridayButton) {
   let buttonContainer = document.querySelector('.buttons-container')
@@ -78,3 +78,21 @@ function fridayButton(fridayButton) {
   buttonContainer.appendChild(button)
 }
 fridayButton('Sexta-feira')
+
+function clickColorFriday() {
+  let fridayButton = document.querySelector('#btn-friday')
+  let allFriday = document.querySelectorAll('.friday')
+  let backgroundColor = 'rgb(238,238,238)'
+  let newColor = 'green'
+  fridayButton.addEventListener('click', function () {
+    for(let index = 0; index < allFriday.length; index += 1) {
+      if(allFriday[index].style.backgroundColor === newColor) {
+        allFriday[index].style.backgroundColor = backgroundColor
+      } else {
+        allFriday[index].style.backgroundColor = newColor
+      }
+    }
+  })
+}
+clickColorFriday();
+
