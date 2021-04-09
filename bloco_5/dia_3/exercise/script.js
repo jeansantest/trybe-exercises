@@ -110,4 +110,11 @@ function zoomOverOut() {
 }
 zoomOverOut()
 
+function personalizedTask(task) {
+  let span = document.createElement('span');
+  span.innerText = task
+  let divMyTasks = document.querySelector('.my-tasks')
+  divMyTasks.appendChild(span)
+}
+personalizedTask('beber água')
 }
