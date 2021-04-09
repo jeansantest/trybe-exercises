@@ -98,33 +98,47 @@ function clickColorFriday() {
 clickColorFriday();
 
 function zoomOverOut() {
-  let li = document.querySelectorAll('.day')
+  let li = document.querySelectorAll('.day');
   for(let index = 0; index < li.length; index += 1) {
     li[index].addEventListener('mouseover', function(event) {
-    event.target.style.fontSize = '40px'
+    event.target.style.fontSize = '40px';
     })
     li[index].addEventListener('mouseout', function(event) {
-    event.target.style.fontSize = '20px'
+    event.target.style.fontSize = '20px';
     })
 }
-}
-zoomOverOut()
+};
+zoomOverOut();
 
 function personalizedTask(task) {
   let span = document.createElement('span');
-  span.innerText = task
-  let divMyTasks = document.querySelector('.my-tasks')
-  divMyTasks.appendChild(span)
-}
-personalizedTask('tarefa')
+  span.innerText = task;
+  let divMyTasks = document.querySelector('.my-tasks');
+  divMyTasks.appendChild(span);
+};
+personalizedTask('tarefa');
 
 function addColorLegend(color) {
-  let div = document.createElement('div')
-  let divMyTasks = document.querySelector('.my-tasks')
-  div.className = 'task'
-  div.style.backgroundColor = color
-  divMyTasks.appendChild(div)
+  let div = document.createElement('div');
+  let divMyTasks = document.querySelector('.my-tasks');
+  div.className = 'task';
+  div.style.backgroundColor = color;
+  divMyTasks.appendChild(div);
+};
+addColorLegend('green');
+
+function addEventClick() {
+  let divTask = document.querySelector('.task');
+  
+  
+  divTask.addEventListener('click', function(event) {
+  if (divTask.className === 'task') {
+    event.target.classList.add('selected')
+  } else {
+    event.target.classList.remove('selected')
+  }
+})
 }
-addColorLegend('red')
+addEventClick()
 
 }
