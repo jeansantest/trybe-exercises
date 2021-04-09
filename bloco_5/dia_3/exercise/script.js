@@ -17,10 +17,10 @@ createDaysOfTheWeek();
 // Escreva seu código abaixo.
 //1
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-function addDays() {
+function addDays(array) {
   let ul = document.querySelector('#days')
-  for(let index = 0; index < dezDaysList.length; index += 1) {
-    let daysList = dezDaysList[index]
+  for(let index = 0; index < array.length; index += 1) {
+    let daysList = array[index]
     let li = document.createElement('li')
     if (daysList === 24 || daysList === 31) {
       li.className = 'day holiday';
@@ -37,27 +37,27 @@ function addDays() {
     } else {
       li.className = 'day';
       li.innerText = daysList;
-      ul.appendChild(li)
+      ul.appendChild(li);
     }
   }
 }
-addDays()
+addDays(dezDaysList);
 
 function feriadosBotao(buttonName) {
-  let buttonContainer = document.querySelector('.buttons-container')
+  let buttonContainer = document.querySelector('.buttons-container');
   let button = document.createElement('button');
-  let buttonId = 'btn-holiday'
-  button.innerText = buttonName
-  button.id = buttonId
-  buttonContainer.appendChild(button)
+  let buttonId = 'btn-holiday';
+  button.innerText = buttonName;
+  button.id = buttonId;
+  buttonContainer.appendChild(button);
 }
-feriadosBotao('Feriados')
+feriadosBotao('Feriados');
 
 function clickColorHoliday() {
-  let holidayButton = document.querySelector('#btn-holiday')
-  let allHoliday = document.querySelectorAll('.holiday')
-  let backgroundColor = 'rgb(238,238,238)'
-  let newColor = 'green'
+  let holidayButton = document.querySelector('#btn-holiday');
+  let allHoliday = document.querySelectorAll('.holiday');
+  let backgroundColor = 'rgb(238,238,238)';
+  let newColor = 'green';
   holidayButton.addEventListener('click', function () {
     for (let index = 0; index < allHoliday.length; index += 1) {
       if (allHoliday[index].style.backgroundColor === newColor) {
@@ -66,34 +66,34 @@ function clickColorHoliday() {
         allHoliday[index].style.backgroundColor = newColor;
       }
     }
-  })
+  });
 };
 clickColorHoliday();
 
 function fridayButton(fridayButton) {
-  let buttonContainer = document.querySelector('.buttons-container')
-  let button = document.createElement('button')
-  let buttonId = 'btn-friday'
-  button.innerText = fridayButton
-  button.id = buttonId
-  buttonContainer.appendChild(button)
+  let buttonContainer = document.querySelector('.buttons-container');
+  let button = document.createElement('button');
+  let buttonId = 'btn-friday';
+  button.innerText = fridayButton;
+  button.id = buttonId;
+  buttonContainer.appendChild(button);
 }
-fridayButton('Sexta-feira')
+fridayButton('Sexta-feira');
 
 function clickColorFriday() {
-  let fridayButton = document.querySelector('#btn-friday')
-  let allFriday = document.querySelectorAll('.friday')
-  let backgroundColor = 'rgb(238,238,238)'
-  let newColor = 'green'
+  let fridayButton = document.querySelector('#btn-friday');
+  let allFriday = document.querySelectorAll('.friday');
+  let backgroundColor = 'rgb(238,238,238)';
+  let newColor = 'green';
   fridayButton.addEventListener('click', function () {
     for(let index = 0; index < allFriday.length; index += 1) {
       if(allFriday[index].style.backgroundColor === newColor) {
-        allFriday[index].style.backgroundColor = backgroundColor
+        allFriday[index].style.backgroundColor = backgroundColor;
       } else {
-        allFriday[index].style.backgroundColor = newColor
+        allFriday[index].style.backgroundColor = newColor;
       }
     }
-  })
+  });
 }
 clickColorFriday();
 
@@ -106,7 +106,7 @@ function zoomOverOut() {
     li[index].addEventListener('mouseout', function(event) {
     event.target.style.fontSize = '20px';
     })
-}
+  }
 };
 zoomOverOut();
 
@@ -137,21 +137,23 @@ function addEventClick() {
   } else {
     event.target.classList.remove('selected')
   }
-})
+});
 }
-addEventClick()
+addEventClick();
 
 function addLegendColorEvent() {
-  let days = document.getElementById('days')
+  let days = document.getElementById('days');
   days.addEventListener('click', function(event) {
-    let divSelected = document.querySelector('.selected')
+    let divSelected = document.querySelector('.selected');
     if (event.target.style.color === divSelected.style.backgroundColor) {
-      event.target.style.color = 'rgb(119,119,119)'
+      event.target.style.color = 'rgb(119,119,119)';
     } else {
-      event.target.style.color = divSelected.style.backgroundColor
+      event.target.style.color = divSelected.style.backgroundColor;
     }
-    })
+    });
 }
-addLegendColorEvent()
+addLegendColorEvent();
+
+
 
 }
