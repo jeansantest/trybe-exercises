@@ -1,3 +1,4 @@
+window.onload = function() {
 function createDaysOfTheWeek() {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
   const weekDaysList = document.querySelector('.week-days');
@@ -96,3 +97,17 @@ function clickColorFriday() {
 }
 clickColorFriday();
 
+function zoomOverOut() {
+  let li = document.querySelectorAll('.day')
+  for(let index = 0; index < li.length; index += 1) {
+    li[index].addEventListener('mouseover', function(event) {
+    event.target.style.fontSize = '40px'
+    })
+    li[index].addEventListener('mouseout', function(event) {
+    event.target.style.fontSize = '20px'
+    })
+}
+}
+zoomOverOut()
+
+}
