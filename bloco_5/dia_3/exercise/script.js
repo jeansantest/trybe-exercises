@@ -116,5 +116,15 @@ function personalizedTask(task) {
   let divMyTasks = document.querySelector('.my-tasks')
   divMyTasks.appendChild(span)
 }
-personalizedTask('beber água')
+personalizedTask('tarefa')
+
+function addColorLegend(color) {
+  let div = document.createElement('div')
+  let divMyTasks = document.querySelector('.my-tasks')
+  div.className = 'task'
+  div.style.backgroundColor = color
+  divMyTasks.appendChild(div)
+}
+addColorLegend('red')
+
 }
