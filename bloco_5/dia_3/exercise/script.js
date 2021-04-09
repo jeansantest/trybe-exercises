@@ -141,4 +141,17 @@ function addEventClick() {
 }
 addEventClick()
 
+function addLegendColorEvent() {
+  let days = document.getElementById('days')
+  days.addEventListener('click', function(event) {
+    let divSelected = document.querySelector('.selected')
+    if (event.target.style.color === divSelected.style.backgroundColor) {
+      event.target.style.color = 'rgb(119,119,119)'
+    } else {
+      event.target.style.color = divSelected.style.backgroundColor
+    }
+    })
+}
+addLegendColorEvent()
+
 }
