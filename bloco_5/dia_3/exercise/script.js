@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = () => {
 function createDaysOfTheWeek() {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
   const weekDaysList = document.querySelector('.week-days');
@@ -85,7 +85,7 @@ function clickColorFriday() {
   let allFriday = document.querySelectorAll('.friday');
   let backgroundColor = 'rgb(238,238,238)';
   let newColor = 'green';
-  fridayButton.addEventListener('click', function () {
+  fridayButton.addEventListener('click', () => {
     for(let index = 0; index < allFriday.length; index += 1) {
       if(allFriday[index].style.backgroundColor === newColor) {
         allFriday[index].style.backgroundColor = backgroundColor;
@@ -100,10 +100,10 @@ clickColorFriday();
 function zoomOverOut() {
   let li = document.querySelectorAll('.day');
   for(let index = 0; index < li.length; index += 1) {
-    li[index].addEventListener('mouseover', function(event) {
+    li[index].addEventListener('mouseover', (event) => {
     event.target.style.fontSize = '40px';
     })
-    li[index].addEventListener('mouseout', function(event) {
+    li[index].addEventListener('mouseout', (event) => {
     event.target.style.fontSize = '20px';
     })
   }
@@ -131,7 +131,7 @@ function addEventClick() {
   let divTask = document.querySelector('.task');
   
   
-  divTask.addEventListener('click', function(event) {
+  divTask.addEventListener('click', (event) => {
   if (divTask.className === 'task') {
     event.target.classList.add('selected')
   } else {
@@ -143,7 +143,7 @@ addEventClick();
 
 function addLegendColorEvent() {
   let days = document.getElementById('days');
-  days.addEventListener('click', function(event) {
+  days.addEventListener('click', (event) => {
     let divSelected = document.querySelector('.selected');
     if (event.target.style.color === divSelected.style.backgroundColor) {
       event.target.style.color = 'rgb(119,119,119)';
