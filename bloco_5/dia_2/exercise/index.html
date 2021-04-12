@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //1
+      let body = document.body
+      let createH1 = document.createElement('h1')
+      createH1.innerText = 'Exercício 5.2 - JavaScript DOM'
+      body.appendChild(createH1)
+      //2
+      let createDivMain = document.createElement('div')
+      createDivMain.className = 'main-content'
+      body.appendChild(createDivMain)
+      //3
+      let divMain = document.querySelector('.main-content')
+      let createDivCenter = document.createElement('div')
+      createDivCenter.className = 'center-content'
+      divMain.appendChild(createDivCenter)
+      //4
+      let divCenter = document.querySelector('.center-content')
+      let createP = document.createElement('p')
+      createP.innerText = 'Tanto faz o texto'
+      divCenter.appendChild(createP)
+      //5
+      let createDivLeft = document.createElement('div')
+      createDivLeft.className = 'left-content'
+      divMain.appendChild(createDivLeft)
+      //6
+      let createDivRight = document.createElement('div')
+      createDivRight.className = 'right-content'
+      divMain.appendChild(createDivRight)
+      //7
+      let divLeft = document.querySelector('.left-content')
+      let createImg = document.createElement('img')
+      createImg.src = 'https://picsum.photos/200'
+      createImg.className = 'small-image'
+      divLeft.appendChild(createImg)
+      /* https://pt.stackoverflow.com/questions/10881/como-substituir-o-src-de-uma-tag-img */
+      //8
+      let list = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+      let divRight = document.querySelector('.right-content')
+      let createUl = document.createElement('ul')
+      divRight.appendChild(createUl)
+      for (let index = 0; index < list.length; index += 1) {
+        let listItem = list[index]
+        let createLi = document.createElement('li')
+        createLi.innerText = listItem
+        createLi.className = 'lista'
+        createUl.appendChild(createLi)
+      }
+      //9
+      function createElementH3 () {
+        let createH3 = document.createElement('h3')
+        return createH3
+      }
+      divMain.appendChild(createElementH3())
+      divMain.appendChild(createElementH3())
+      divMain.appendChild(createElementH3())
+      //Alterações e remoções
+      //1
+      createH1.className = 'title'
+      //2
+      let tagH3 = document.getElementsByTagName('h3')
+      for (let index = 0; index < tagH3.length; index += 1) {
+        let tags = tagH3[index]
+        tags.className = 'description'
+      }
+      //3
+      createDivLeft.parentElement.removeChild(createDivLeft)
+      //4
+      createDivRight.style.marginRight = 'auto'
+      //5
+      createDivCenter.parentElement.style.backgroundColor = 'green'
+      //6
+      let lista = document.querySelectorAll('.lista')
+      for (let index = 0; index < lista.length; index += 1) {
+        let element = lista[index]
+        if (element.innerText.includes('dez')) {
+          createUl.removeChild(element)
+        } if (element.innerText.includes('nove')) {
+          createUl.removeChild(element)
+        }
+      }
+    </script>
+  </body>
+</html>
