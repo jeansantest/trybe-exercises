@@ -11,34 +11,34 @@
   <form action="" method="get">
     <fieldset>
       <label for="input-name">Nome:
-        <input type="text" name="nome" id="input-name" maxlength="40" required>
+        <input type="text" name="nome" id="input-name" maxlength="40">
       </label>
       <br>
       <label for="input-email">Email:
-        <input type="email" name="email" id="input-email" maxlength="50" required>
+        <input type="email" name="email" id="input-email" maxlength="50">
       </label>
       <br>
       <label for="input-cpf">CPF:
-        <input type="text" name="cpf" id="input-cpf" maxlength="11" required>
+        <input type="text" name="cpf" id="input-cpf" maxlength="11">
       </label>
       <br>
       <label for="input-adress">Endereço:
-        <input type="text" name="endereço" maxlength="200" id="input-adress" required>
+        <input type="text" name="endereço" maxlength="200" id="input-adress">
       </label>
       <br>
       <label for="input-city">Cidade:
-        <input type="text" name="cidade" maxlength="28" id="input-city" required>
+        <input type="text" name="cidade" maxlength="28" id="input-city">
       </label>
       <br>
       <label for="select-state">Estado:
-        <select name="estado" id="select-state" value="" required>
+        <select name="estado" id="select-state" value="">
           <option value="">Escolha um estado...</option>
         </select>
       </label>
       <br>
       <label for="imovel">Imóvel:
-        <input type="radio" name="imovel" value="casa" id="house" required><span>Casa</span>
-        <input type="radio" name="imovel" value="apartamento" id="apartment" required><span>Apartamento</span>
+        <input type="radio" name="imovel" value="casa" id="house"><span>Casa</span>
+        <input type="radio" name="imovel" value="apartamento" id="apartment"><span>Apartamento</span>
       </label>
       <button type="submit">Enviar</button>
     </fieldset>
@@ -48,17 +48,17 @@
       </label>
       <br>
       <label for="office">Cargo:
-        <input type="text" name="cargo" id="office" maxlength="40" required>
+        <input type="text" name="cargo" id="office" maxlength="40">
       </label>
       <br>
       <label for="office-description">Descrição do cargo:
-        <input type="text" name="descrição-cargo" id="office-description" maxlength="500" required>
+        <input type="text" name="descrição-cargo" id="office-description" maxlength="500">
       </label>
       <br>
-      <label for="date">Data:
-        <input type="text" placeholder="DD/MM/AAAA" maxlength="10" name="data" id="date" required>
+      <label for="date">Data de início:
+        <input type="text" placeholder="DD/MM/AAAA" name="data" class="date-input" maxlength="10">
       </label>
-      <button type="submit">Enviar</button>
+      <button type="submit" id="submit-button">Enviar</button>
     </fieldset>
   </form>
   <script src="script.js"></script>
