@@ -6,39 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+  <link rel="stylesheet" href="just-validate/css/justValidateTooltip.min.css">
   <title>Form</title>
 </head>
 <body>
-  <form action="" method="get">
+  <form action="" method="get" class="js-form form">
     <fieldset>
       <label for="input-name">Nome:
-        <input class="form-control" type="text" name="nome" id="input-name" maxlength="40">
+        <input class="form-control" type="text" data-validate-field=”name” name="nome" id="input-name" maxlength="40" required>
       </label>
       <br>
       <label for="input-email">Email:
-        <input class="form-control" type="text" name="email" id="input-email" maxlength="50">
+        <input class="form-control" type="email" data-validate-field="email" name="email" id="input-email" maxlength="50" required>
       </label>
       <br>
       <label for="input-cpf">CPF:
-        <input class="form-control" type="text" name="cpf" id="input-cpf" maxlength="11">
+        <input class="form-control" type="text" name="cpf" id="input-cpf" maxlength="11" required>
       </label>
       <br>
       <label for="input-adress">Endereço:
-        <input class="form-control" type="text" name="endereço" maxlength="200" id="input-adress">
+        <input class="form-control" type="text" name="endereço" maxlength="200" id="input-adress" required>
       </label>
       <br>
       <label for="input-city">Cidade:
-        <input class="form-control" type="text" name="cidade" maxlength="28" id="input-city">
+        <input class="form-control" type="text" name="cidade" maxlength="28" id="input-city" required>
       </label>
       <br>
       <label for="select-state">Estado:
-        <select class="form-control" name="estado" id="select-state" value="">
+        <select class="form-control" name="estado" id="select-state" value="" required>
           <option value="">Escolha um estado...</option>
         </select>
       </label>
       <br>
       <div class="">
-      <label for="imovel">Imóvel: <br>
+      <label for="imovel" required>Imóvel: <br>
         <input type="radio" name="imovel" value="casa" id="house"><span>Casa</span>
         <input type="radio" name="imovel" value="apartamento" id="apartment"><span>Apartamento</span>
       </label>
@@ -46,24 +47,25 @@
     </fieldset>
     <fieldset>
       <label for="resume">Resumo do currículo: <br>
-        <textarea class="form-control" name="resumo" id="resume" cols="30" rows="10" maxlength="1000"></textarea>
+        <textarea class="form-control" name="resumo" id="resume" cols="30" rows="10" maxlength="1000" required></textarea>
       </label>
       <br>
       <label for="office">Cargo:
-        <input class="form-control" type="text" name="cargo" id="office" maxlength="40">
+        <input class="form-control" type="text" name="cargo" id="office" maxlength="40" required>
       </label>
       <br>
       <label for="office-description">Descrição do cargo:
-        <input class="form-control" type="text" name="descrição-cargo" id="office-description" maxlength="500">
+        <input class="form-control" type="text" name="descrição-cargo" id="office-description" maxlength="500" required>
       </label>
       <br>
       <label for="date">Data de início:
-        <input type="text" placeholder="DD/MM/AAAA" name="data" class="form-control" id="date-input" maxlength="10">
+        <input type="text" placeholder="DD/MM/AAAA" name="data" class="form-control" id="date-input" maxlength="10" required>
       </label>
       <button class="btn btn-primary mb-2" type="submit" id="submit-button">Enviar</button>
     </fieldset>
   </form>
   <script src="dist/js/DatePickerX.min.js"></script>
+  <script src="just-validate/js/just-validate.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
