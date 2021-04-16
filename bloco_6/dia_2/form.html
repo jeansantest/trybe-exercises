@@ -4,63 +4,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+  <title>Form</title>
 </head>
 <body>
   <form action="" method="get">
     <fieldset>
       <label for="input-name">Nome:
-        <input type="text" name="nome" id="input-name" maxlength="40">
+        <input class="form-control" type="text" name="nome" id="input-name" maxlength="40">
       </label>
       <br>
       <label for="input-email">Email:
-        <input type="email" name="email" id="input-email" maxlength="50">
+        <input class="form-control" type="text" name="email" id="input-email" maxlength="50">
       </label>
       <br>
       <label for="input-cpf">CPF:
-        <input type="text" name="cpf" id="input-cpf" maxlength="11">
+        <input class="form-control" type="text" name="cpf" id="input-cpf" maxlength="11">
       </label>
       <br>
       <label for="input-adress">Endereço:
-        <input type="text" name="endereço" maxlength="200" id="input-adress">
+        <input class="form-control" type="text" name="endereço" maxlength="200" id="input-adress">
       </label>
       <br>
       <label for="input-city">Cidade:
-        <input type="text" name="cidade" maxlength="28" id="input-city">
+        <input class="form-control" type="text" name="cidade" maxlength="28" id="input-city">
       </label>
       <br>
       <label for="select-state">Estado:
-        <select name="estado" id="select-state" value="">
+        <select class="form-control" name="estado" id="select-state" value="">
           <option value="">Escolha um estado...</option>
         </select>
       </label>
       <br>
-      <label for="imovel">Imóvel:
+      <div class="">
+      <label for="imovel">Imóvel: <br>
         <input type="radio" name="imovel" value="casa" id="house"><span>Casa</span>
         <input type="radio" name="imovel" value="apartamento" id="apartment"><span>Apartamento</span>
       </label>
-      <button type="submit">Enviar</button>
+      </div>
     </fieldset>
     <fieldset>
-      <label for="resume">Resumo do currículo <br>
-        <textarea name="resumo" id="resume" cols="30" rows="10" maxlength="1000"></textarea>
+      <label for="resume">Resumo do currículo: <br>
+        <textarea class="form-control" name="resumo" id="resume" cols="30" rows="10" maxlength="1000"></textarea>
       </label>
       <br>
       <label for="office">Cargo:
-        <input type="text" name="cargo" id="office" maxlength="40">
+        <input class="form-control" type="text" name="cargo" id="office" maxlength="40">
       </label>
       <br>
       <label for="office-description">Descrição do cargo:
-        <input type="text" name="descrição-cargo" id="office-description" maxlength="500">
+        <input class="form-control" type="text" name="descrição-cargo" id="office-description" maxlength="500">
       </label>
       <br>
       <label for="date">Data de início:
-        <input type="text" placeholder="DD/MM/AAAA" name="data" class="date-input" maxlength="10">
+        <input type="text" placeholder="DD/MM/AAAA" name="data" class="form-control" id="date-input" maxlength="10">
       </label>
-      <button type="submit" id="submit-button">Enviar</button>
+      <button class="btn btn-primary mb-2" type="submit" id="submit-button">Enviar</button>
     </fieldset>
   </form>
+  <script src="dist/js/DatePickerX.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
