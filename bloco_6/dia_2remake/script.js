@@ -38,3 +38,12 @@ function createOptionStates() {
   }
 }
 createOptionStates();
+
+new window.JustValidate('.js-form-1', {
+  rules: {
+      email: {
+          email: true,
+          required: 'Coloca'
+          }
+  },
+})
