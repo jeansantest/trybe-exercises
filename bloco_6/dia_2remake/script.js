@@ -39,6 +39,10 @@ function createOptionStates() {
 }
 createOptionStates();
 
+document.getElementById('date-input').DatePickerX.init({
+  format: 'dd/mm/yyyy'
+});
+
 new window.JustValidate('.js-form', {
   Rules: {
     email: {
@@ -46,10 +50,5 @@ new window.JustValidate('.js-form', {
         email: true
     },
   },
-  Messages: {
-    email: {
-      remote: 'Email already exist',
-      email: 'Email inválido',
-    },
-  },
+  focusWrongField: true,
 });
