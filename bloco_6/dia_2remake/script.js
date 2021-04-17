@@ -39,11 +39,17 @@ function createOptionStates() {
 }
 createOptionStates();
 
-new window.JustValidate('.js-form-1', {
-  rules: {
-      email: {
-          email: true,
-          required: 'Coloca'
-          }
+new window.JustValidate('.js-form', {
+  Rules: {
+    email: {
+        required: true,
+        email: true
+    },
   },
-})
+  Messages: {
+    email: {
+      remote: 'Email already exist',
+      email: 'Email inválido',
+    },
+  },
+});
