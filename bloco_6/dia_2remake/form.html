@@ -1,80 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/DatePickerX.min.css">
-  <link rel="stylesheet" href="css/justValidateTooltip.min.css">
-  <title>Forms</title>
-</head>
-<body>
-  <div class="container">
-    <h1 class="text-center">Forms Exercise</h1>
-    <form class="row gy-2 g-3 mt-4 js-form border border-3 border-info border-gradient rounded-3 bg-light bg-gradient">
-      <div class="col-sm-4">
-        <label for="name-input" class="form-label">Nome</label>
-        <input type="text" class="form-control" placeholder="Digite o seu nome" name="nome" maxlength="40" data-validate-field="name" id="name-input" required>
-      </div>
-      <div class="col-sm-4">
-        <label for="email-input" class="form-label">Email</label>
-        <input type="text" class="form-control" placeholder="Digite o seu email" name="email" data-validate-field="email" maxlength="50" id="email-input">
-        <small id="emailHelp" class="form-text text-muted">Nunca iremos compartilhar seu email com ninguém</small>
-      </div>
-      <div class="col-sm-4">
-        <label for="cpf-input" class="form-label">CPF</label>
-        <input type="text" class="form-control" placeholder="Digite seu CPF" name="cpf" maxlength="11" id="cpf-input" required>
-      </div>
-      <div class="col-12">
-        <label for="adress-input" class="form-label">Endereço</label>
-        <input type="text" class="form-control" placeholder="Digite seu endereço" name="endereço" maxlength="200" id="adress-input" required>
-      </div>
-      <div class="col-md-6">
-        <label for="city-input" class="form-label">Cidade</label>
-        <input type="text" class="form-control" placeholder="Digite sua cidade" name="cidade" maxlength="28" id="city-input" required>
-      </div>
-      <div class="col-md-3">
-        <label for="select-state" class="form-label">Estado</label>
-        <select class="form-control" name="estado" id="select-state" required>
-          <option value="">Selecione um estado...</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <label class="form-label">Selecione o tipo de imóvel</label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="imovel" id="house" value="casa" required>
-          <label class="form-check-label" for="house">Casa</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/DatePickerX.min.css" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Forms Exercise</h1>
+      <form
+        class="row gy-2 g-3 mt-4 js-form border border-3 border-info border-gradient rounded-3 bg-light bg-gradient" method="GET" action=""
+      >
+        <div class="col-sm-4">
+          <label for="name-input" class="form-label">Nome</label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            placeholder="Digite o seu nome"
+            name="nome"
+            maxlength="40"
+            data-validate-field="name"
+            id="name-input"
+            required
+          />
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="imovel" id="apartment" value="apartamento" required>
-          <label class="form-check-label" for="apartment">Apartamento</label>
+        <div class="col-sm-4">
+          <label for="email-input" class="form-label">Email</label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            placeholder="Digite o seu email"
+            name="email"
+            data-validate-field="email"
+            maxlength="50"
+            id="email-input"
+            aria-describedby="emailHelp"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >Nunca iremos compartilhar seu email com ninguém</small
+          >
         </div>
-      </div>
-      <div class="mb-3">
-        <label for="curriculo-textarea" class="form-label">Resumo do currículo</label>
-        <textarea class="form-control" id="curriculo-textarea" name="curriculo" rows="3" maxlength="1000"></textarea>
-      </div>
-      <div class="col-sm-3">
-        <label for="office-input" class="form-label">Cargo</label>
-        <input type="text" class="form-control" placeholder="Digite seu cargo aqui" name="cargo" maxlength="40" id="office-input" required>
-      </div>
-      <div class="col-sm-6">
-        <label for="office-description-input" class="form-label">Descrição de cargo</label>
-        <input type="text" class="form-control" placeholder="Descrição do cargo" name="descricao" maxlength="40" id="office-description-input" required>
-      </div>
-      <div class="col-sm-3">
-        <label for="date-input" class="form-label">Data</label>
-        <input type="text" class="form-control" placeholder="DD/MM/YYYY" name="data" maxlength="40" id="date-input" required>
-      </div>
-      <button type="submit" class="btn btn-success mt-2 mb-3 col-md-6">Submit</button>
-      <button type="reset" class="btn btn-danger mt-2 mb-3 col-md-6">Reset</button>
-    </form>
-  </div>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/DatePickerX.min.js"></script>
-  <script src="js/just-validate.min.js"></script>
-  <script src="script.js"></script>
-</body>
+        <div class="col-sm-4">
+          <label for="cpf-input" class="form-label">CPF</label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            placeholder="Digite seu CPF"
+            name="cpf"
+            data-validate-field="cpf"
+            maxlength="11"
+            id="cpf-input"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <label for="adress-input" class="form-label">Endereço</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite seu endereço"
+            data-validate-field="address"
+            name="endereço"
+            maxlength="200"
+            id="adress-input"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="city-input" class="form-label">Cidade</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite sua cidade"
+            name="cidade"
+            data-validate-field="city"
+            maxlength="28"
+            id="city-input"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="select-state" class="form-label">Estado</label>
+          <select class="form-control" name="estado" id="select-state" data-validate-field="state" required>
+            <option value="">Selecione um estado...</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Selecione o tipo de imóvel</label><br />
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              data-validate-field="radio"
+              name="imovel"
+              id="house"
+              value="casa"
+              required
+            />
+            <label class="form-check-label" for="house">Casa</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              data-validate-field="radio"
+              name="imovel"
+              id="apartment"
+              value="apartamento"
+              required
+            />
+            <label class="form-check-label" for="apartment">Apartamento</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="curriculo-textarea" class="form-label"
+            >Resumo do currículo</label
+          >
+          <textarea
+            class="form-control"
+            id="curriculo-textarea"
+            name="curriculo"
+            data-validate-field="text"
+            rows="3"
+            maxlength="1000"
+          ></textarea>
+        </div>
+        <div class="col-sm-3">
+          <label for="office-input" class="form-label">Cargo</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite seu cargo aqui"
+            name="cargo"
+            data-validate-field="office"
+            maxlength="40"
+            id="office-input"
+            required
+          />
+        </div>
+        <div class="col-sm-6">
+          <label for="office-description-input" class="form-label"
+            >Descrição de cargo</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Descrição do cargo"
+            name="descricao"
+            data-validate-field="description"
+            maxlength="40"
+            id="office-description-input"
+            required
+          />
+        </div>
+        <div class="col-sm-3">
+          <label for="date-input" class="form-label">Data</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="DD/MM/YYYY"
+            name="data"
+            data-validate-field="date"
+            maxlength="40"
+            id="date-input"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-success mt-2 mb-3 col-md-6">
+          Submit
+        </button>
+        <button type="reset" class="btn btn-danger mt-2 mb-3 col-md-6">
+          Reset
+        </button>
+      </form>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/DatePickerX.min.js"></script>
+    <script src="js/just-validate.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
