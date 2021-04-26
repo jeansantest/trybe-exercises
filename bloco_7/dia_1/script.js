@@ -15,7 +15,7 @@ console.log(`Os números ${arrSorted} se encontram ordenados de forma crescente!
 const factorial = n => n < 2 ? 1 : factorial(n-1) * n;
 console.log(factorial(5))
 
-const longestWord = s => s.split(' ').sort((a,b)=>a.length < b.length ? 1 : -1).slice(0,1).join('');
+const longestWord = s => s.split(' ').sort((a,b)=>a.length > b.length ? -1 : 1).slice(0,1).join('');
 console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu"))
 
 const button = document.querySelector('button');
