@@ -17,3 +17,22 @@ console.log(factorial(5))
 
 const longestWord = s => s.split(' ').sort((a,b)=>a.length > b.length ? -1 : a.length < b.length ? 1 : 0).slice(0,1).join('');
 console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu"))
+
+const button = document.querySelector('button');
+const span = document.querySelector('span');
+let counter = 0
+
+button.addEventListener('click', () => {counter += 1; span.innerHTML = counter})
+
+const trybeString = x => `Tryber ${x} aqui!`
+console.log(trybeString('Jean'))
+
+const skills = ['JavaScript', 'HTML', 'CSS', 'Xablau', 'Valorant'];
+
+const trybeSkills = x => `${x} minhas cinco principais habilidades são:
+${skills[0]}
+${skills[1]}
+${skills[2]}
+${skills[3]}
+${skills[4]}!`
+console.log(trybeSkills(trybeString('Jean')))
