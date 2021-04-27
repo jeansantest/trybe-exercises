@@ -37,3 +37,7 @@ console.log(objectValues(lesson2))
 //Exercício 5: Crie um objeto de nome allLessons , que deve agrupar todas as aulas através do Object.assign
 const allLessons = Object.assign({}, {lesson1, lesson2, lesson3})
 console.log(allLessons)
+
+//Exercício 6: Crie uma função que retorne o número total de estudantes em todas as aulas
+const countStudents = () => allLessons.lesson1.numeroEstudantes + allLessons.lesson2.numeroEstudantes + allLessons.lesson3.numeroEstudantes
+console.log(countStudents())
