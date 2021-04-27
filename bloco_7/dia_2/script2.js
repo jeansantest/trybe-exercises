@@ -48,4 +48,19 @@ console.log(getValueOfObjectPosition(lesson1, 3));
 
 //Exercício 8: Crie uma função que verifique se o par (chave / valor) existe na função.
 const verifyPair = (object, key, value) => Object.keys(object).includes(key) && Object.values(object).includes(value);
-console.log(verifyPair(lesson2, 'turno', 'manhã'))
+console.log(verifyPair(lesson2, 'turno', 'manhã'));
+
+// Exercício 1 Bônus: Crie uma função para contar quantos estudantes assistiram às aulas de Matemática.
+// const countStudentsAtMath = (topic) => {
+//   let count = 0;
+//   allLessons.lesson1.materia === topic ? count += allLessons.lesson1.numeroEstudantes : false;
+//   allLessons.lesson2.materia === topic ? count += allLessons.lesson2.numeroEstudantes : false;
+//   allLessons.lesson3.materia === topic ? count += allLessons.lesson3.numeroEstudantes : false;
+//   return count
+// }
+// console.log(countStudentsAtMath('Matemática'))
+
+// Exercício 1 Bônus: Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Refatorado
+const countStudentsAtMath = (topic) => Object.values(allLessons).map(eachObject => eachObject.materia === topic ? eachObject.numeroEstudantes : 0).reduce((a, b) => a + b);
+
+console.log(countStudentsAtMath('Matemática'));
