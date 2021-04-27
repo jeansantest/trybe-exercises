@@ -39,8 +39,12 @@ const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
 console.log(allLessons);
 
 //Exercício 6: Crie uma função que retorne o número total de estudantes em todas as aulas
-const countStudents = () => allLessons.lesson1.numeroEstudantes + allLessons.lesson2.numeroEstudantes + allLessons.lesson3.numeroEstudantes;
-console.log(countStudents());
+// const countStudents = () => allLessons.lesson1.numeroEstudantes + allLessons.lesson2.numeroEstudantes + allLessons.lesson3.numeroEstudantes;
+// console.log(countStudents());
+
+//Exercício 6: Crie uma função que retorne o número total de estudantes em todas as aulas. Refatorado
+const countStudents = (object) => Object.values(object).map(eachObject => eachObject.numeroEstudantes).reduce((a, b) => a + b);
+console.log(countStudents(allLessons))
 
 //Exercício 7: Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.
 const getValueOfObjectPosition = (object, position) => Object.values(object)[position];
