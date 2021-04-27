@@ -45,3 +45,7 @@ console.log(countStudents());
 //Exercício 7: Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.
 const getValueOfObjectPosition = (object, position) => Object.values(object)[position];
 console.log(getValueOfObjectPosition(lesson1, 3));
+
+//Exercício 8: Crie uma função que verifique se o par (chave / valor) existe na função.
+const verifyPair = (object, key, value) => Object.keys(object).includes(key) && Object.values(object).includes(value);
+console.log(verifyPair(lesson2, 'turno', 'manhã'))
