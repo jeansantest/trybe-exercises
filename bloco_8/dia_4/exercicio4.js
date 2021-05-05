@@ -74,7 +74,8 @@ const expectedResult = {
 };
 
 function longestNamedBook() {
-  // escreva seu código aqui
+  return books.reduce((acc, value) => value.name.length > acc.name.length ? value : acc);
 }
+console.log(longestNamedBook())
 
 assert.deepStrictEqual(longestNamedBook(), expectedResult);
