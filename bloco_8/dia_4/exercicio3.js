@@ -63,10 +63,11 @@ const books = [
   },
 ];
 
-function allNames() {
-  return `${books.reduce((acc, value) => acc + `, ${value.author.name}`, 'Nomes:').replace(/:,/, ':')}.`
+const expectedResult = 43;
+
+function averageAge() {
+  return books.reduce((acc, value) => acc + (value.releaseYear - value.author.birthYear), 0) / books.length
 }
+console.log(averageAge())
 
-console.log(allNames())
-
-assert.deepStrictEqual(allNames(), 'Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.');
+assert.strictEqual(averageAge(), expectedResult);
