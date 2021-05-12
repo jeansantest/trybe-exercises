@@ -12,7 +12,7 @@ const fetchPromise = () => {
   
   promise
     .then((sum) => console.log([2,3,5,10].map(n => sum / n)))
-    .catch(() => console.log('Promise rejected'))
+    .catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'))
 };
 
 fetchPromise()
