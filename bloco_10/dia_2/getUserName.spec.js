@@ -4,15 +4,15 @@
 const { getUserName } = require('./getUserName');
 
 describe('getUserName - promise', () => {
-  describe('quando o userID existe', () => {
-    it('retorna o nome do usuário', () => {
+  describe('when the user id exists', () => {
+    it('returns the user name', () => {
       expect.assertions(1);
       return getUserName(4).then(data => expect(data).toEqual('Mark'));
     });
   });
 
-  describe('quando o userID não existe', () => {
-    it('retorna um erro', () => {
+  describe('when the user id does not exists', () => {
+    it('returns an error', () => {
       expect.assertions(1);
       return getUserName(2).catch(error =>
         expect(error).toEqual({ error: 'User with 2 not found.' })
@@ -22,3 +22,11 @@ describe('getUserName - promise', () => {
 });
 
 // feito baseado no gabarito
+
+test('when the user id exists', async () => {
+  await expect(getUserName(4)).resolves.toBe('Mark')
+})
+
+test('when the user id does not exists', async () => {
+  await expect(getUserName(2)).rejects.toEqual({ error: 'User with 2 not found.' })
+})
