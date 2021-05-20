@@ -1,0 +1,1 @@
+const { randomTo100 } = require('./random');
