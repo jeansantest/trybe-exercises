@@ -1,5 +1,3 @@
-// const { expect } = require('@jest/globals');
-const { it } = require('@jest/globals');
 const tofix = require('./tofix');
 jest.mock("./tofix");
 
