@@ -11,11 +11,7 @@ describe('função subtrair', () => {
   })
 
   it('restaurar implentação original', () => {
-    // testando a implementação original, o mock e a restauração da função original
-
-    // implementação original
-
-    // criando o mock e substituindo a implementação para uma subtração
+    // criando o mock e substituindo a implementação para uma adição
     const mockSubtrair = jest
       .spyOn(tofix, "subtrair")
       .mockImplementation((a, b) => a + b)
