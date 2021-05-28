@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Form from './Form';
+import Form2 from './Form2';
 
 export default class App extends Component {
   render() {
-    return <Form />;
+    return <Form2 />;
   }
 }
