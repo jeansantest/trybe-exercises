@@ -4,40 +4,22 @@ export default class Form extends Component {
   constructor() {
     super();
 
-    this.handleChangeTextArea = this.handleChangeTextArea.bind(this);
-    this.handleChangeInputNome = this.handleChangeInputNome.bind(this);
-    this.handleChangeSelect = this.handleChangeSelect.bind(this);
-    this.handleChangeAge = this.handleChangeAge.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       sobreMim: '',
       nome: '',
       select: 'hello',
       idade: 0,
+      check: false,
     };
   }
 
-  handleChangeTextArea(event) {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      sobreMim: event.target.value,
-    });
-  }
-
-  handleChangeInputNome(event) {
-    this.setState({
-      nome: event.target.value,
-    });
-  }
-
-  handleChangeSelect(event) {
-    this.setState({
-      select: event.target.value,
-    });
-  }
-
-  handleChangeAge(event) {
-    this.setState({
-      idade: event.target.value,
+      [name]: value,
     });
   }
 
@@ -48,31 +30,34 @@ export default class Form extends Component {
           Estados e React - Tecnologia fantástica ou reagindo a regionalismos?
         </h1>
         <form className="form">
-          <select value={this.state.select} onChange={this.handleChangeSelect}>
-            <option value="hello">hello</option>
-            <option value="world">world</option>
-          </select>
+          <fieldset>
+            <legend>Mensagem de Texto</legend>
+            <label>
+              Diga qual o seu Estado favorito! De React ou do Brasil, você
+              decide! =)
+              <textarea
+                name="sobreMim"
+                value={this.state.sobreMim}
+                onChange={this.handleChange}
+              />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Informações pessoais</legend>
+            <label>
+              Nome:
+              <input type="text" name="nome" onChange={this.handleChange} />
+            </label>
+            <label>
+              Idade:
+              <input type="number" name="idade" onChange={this.handleChange} />
+            </label>
+          </fieldset>
           <label>
-            Diga qual o seu Estado favorito! De React ou do Brasil, você decide!
-            =)
-            <textarea
-              name="sobre-mim"
-              value={this.state.sobreMim}
-              onChange={this.handleChangeTextArea}
-            />
+            Checkbox:
+            <input type="checkbox" name="check" onChange={this.handleChange} />
           </label>
-          <label>
-            Nome:
-            <input
-              type="text"
-              name="nome"
-              onChange={this.handleChangeInputNome}
-            />
-          </label>
-          <label>
-            Idade:
-            <input type="number" name="idade" onChange={this.handleChangeAge} />
-          </label>
+          <input type="file" />
         </form>
       </div>
     );
