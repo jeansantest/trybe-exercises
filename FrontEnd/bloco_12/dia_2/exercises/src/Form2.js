@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FormDiv from './FormDiv';
 
 const states = [
   'Rio de Janeiro',
@@ -9,6 +10,21 @@ const states = [
   'Ceará',
   'Distrito Federal',
 ];
+
+const reset = {
+  nome: '',
+  email: '',
+  cpf: '',
+  endereço: '',
+  cidade: '',
+  estados: '',
+  resumo: '',
+  moradia: '',
+  cargo: '',
+  descricaoCargo: '',
+  showAlert: true,
+  submitted: false,
+};
 export default class Form2 extends Component {
   constructor() {
     super();
@@ -16,6 +32,9 @@ export default class Form2 extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.submit = this.submit.bind(this);
+    this.reset = this.reset.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
 
     this.state = {
       nome: '',
@@ -28,6 +47,8 @@ export default class Form2 extends Component {
       moradia: '',
       cargo: '',
       descricaoCargo: '',
+      showAlert: true,
+      submitted: false,
     };
   }
 
@@ -49,6 +70,21 @@ export default class Form2 extends Component {
     this.setState({
       [name]: value,
     });
+  }
+
+  handleMouseEnter() {
+    if (this.state.showAlert === true) {
+      alert('Preencha com cuidado esta informação.');
+    }
+    this.setState({ showAlert: false });
+  }
+
+  submit() {
+    this.setState({ submitted: true });
+  }
+
+  reset() {
+    this.setState(reset);
   }
 
   render() {
@@ -147,15 +183,14 @@ export default class Form2 extends Component {
             </label>
             <label>
               Cargo
-              <textarea
+              <input
+                type="text"
                 name="cargo"
                 maxLength="40"
                 required
                 onChange={this.handleChange}
-                onMouseEnter={() =>
-                  alert('Preencha com cuidado esta informação.')
-                }
-              ></textarea>
+                onMouseEnter={this.handleMouseEnter}
+              />
             </label>
             <label>
               Descrição do cargo
@@ -167,8 +202,10 @@ export default class Form2 extends Component {
               ></textarea>
             </label>
           </fieldset>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.submit} />
+          <input type="reset" value="Reset" onClick={this.reset} />
         </form>
+        {this.state.submitted && <FormDiv currentState={this.state} />}
       </div>
     );
   }

@@ -3,6 +3,10 @@ import Form2 from './Form2';
 
 export default class App extends Component {
   render() {
-    return <Form2 />;
+    return (
+      <div>
+        <Form2 />
+      </div>
+    );
   }
 }
