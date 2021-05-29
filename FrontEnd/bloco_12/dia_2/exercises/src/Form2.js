@@ -15,6 +15,7 @@ export default class Form2 extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
 
     this.state = {
       nome: '',
@@ -25,6 +26,8 @@ export default class Form2 extends Component {
       estados: '',
       resumo: '',
       moradia: '',
+      cargo: '',
+      descricaoCargo: '',
     };
   }
 
@@ -35,6 +38,14 @@ export default class Form2 extends Component {
   handleChange({ target }) {
     const { name, value } = target;
 
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleBlur({ target }) {
+    let { name, value } = target;
+    if (name === 'cidade') value = value.match(/^\d/) ? '' : value;
     this.setState({
       [name]: value,
     });
@@ -86,7 +97,8 @@ export default class Form2 extends Component {
               name="cidade"
               maxLength="28"
               onChange={this.handleChange}
-              value={this.state.cidade.match(/^\d/) ? '' : this.state.cidade}
+              onBlur={this.handleBlur}
+              value={this.state.cidade}
               placeholder="Cidade aqui"
               required
             />
@@ -124,12 +136,36 @@ export default class Form2 extends Component {
           </fieldset>
           <fieldset>
             <legend>Dados do último emprego</legend>
-            <textarea
-              name="resumo"
-              maxLength="1000"
-              required
-              onChange={this.handleChange}
-            ></textarea>
+            <label>
+              Resumo de currículo
+              <textarea
+                name="resumo"
+                maxLength="1000"
+                required
+                onChange={this.handleChange}
+              ></textarea>
+            </label>
+            <label>
+              Cargo
+              <textarea
+                name="cargo"
+                maxLength="40"
+                required
+                onChange={this.handleChange}
+                onMouseEnter={() =>
+                  alert('Preencha com cuidado esta informação.')
+                }
+              ></textarea>
+            </label>
+            <label>
+              Descrição do cargo
+              <textarea
+                name="descricaoCargo"
+                maxLength="500"
+                required
+                onChange={this.handleChange}
+              ></textarea>
+            </label>
           </fieldset>
           <input type="submit" value="Submit" />
         </form>
