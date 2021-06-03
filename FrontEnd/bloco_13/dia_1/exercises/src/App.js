@@ -1,38 +1,73 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+
+    this.saveJoke = this.saveJoke.bind(this);
+    this.renderJokeElement = this.renderJokeElement.bind(this);
+
     this.state = {
-      characters: [],
+      jokeObj: undefined,
+      loading: true,
+      storedJokes: [],
     };
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      fetch('https://rickandmortyapi.com/api/character')
-        .then((response) => response.json())
-        .then((data) => {
-          this.setState({ characters: data.results });
+  async fetchJoke() {
+    this.setState(
+      { loading: true }, // Primeiro parâmetro da setState()!
+      async () => {
+        const requestHeaders = { headers: { Accept: 'application/json' } };
+        const requestReturn = await fetch(
+          'https://icanhazdadjoke.com/',
+          requestHeaders
+        );
+        const requestObject = await requestReturn.json();
+        this.setState({
+          loading: false,
+          jokeObj: requestObject,
         });
-    }, 3000);
+      }
+    );
+  }
+
+  componentDidMount() {
+    this.fetchJoke();
+  }
+
+  saveJoke() {
+    this.setState(({ storedJokes, jokeObj }) => ({
+      storedJokes: [...storedJokes, jokeObj],
+    }));
+
+    this.fetchJoke();
+  }
+
+  renderJokeElement() {
+    return (
+      <div>
+        <p>{this.state.jokeObj.joke}</p>
+        <button type="button" onClick={this.saveJoke}>
+          Salvar piada!
+        </button>
+      </div>
+    );
   }
 
   render() {
-    const { characters } = this.state;
+    const { storedJokes, loading } = this.state;
+    const loadingElement = <span>Loading...</span>;
+
     return (
-      <div className="App">
-        <h1>Ricky and Morty Characters:</h1>
-        <div className="body">
-          {characters.map((character) => {
-            return (
-              <div className="container" key={character.name}>
-                <h3>{character.name}</h3>
-                <img src={character.image} alt={character.name} />
-              </div>
-            );
-          })}
-        </div>
+      <div>
+        <span>
+          {storedJokes.map(({ id, joke }) => (
+            <p key={id}>{joke}</p>
+          ))}
+        </span>
+
+        <p>{loading ? loadingElement : this.renderJokeElement()}</p>
       </div>
     );
   }
