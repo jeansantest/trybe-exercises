@@ -22,9 +22,17 @@
       function contadorReducer(state = {contador: 0, clicks: 0, arrayContador: []}, action) {
         switch (action.type) {
           case 'INCREMENT':
-            return {contador: state.contador + action.value, clicks: state.clicks + action.click, arrayContador: ([...state.arrayContador, state.contador + action.value]||[state.contador + action.value])};
+            return {
+              contador: state.contador + action.value, 
+              clicks: state.clicks + action.click, 
+              arrayContador: ([...state.arrayContador, state.contador + action.value]||[state.contador + action.value])
+            };
           case 'DECREMENT':
-            return {contador: state.contador - action.value, clicks: state.clicks + action.click, arrayContador: ([...state.arrayContador, state.contador + action.value]||[state.contador + action.value])};
+            return {
+              contador: state.contador - action.value, 
+              clicks: state.clicks + action.click, 
+              arrayContador: ([...state.arrayContador, state.contador + action.value]||[state.contador + action.value])
+            };
           default:
             return state;
         }
