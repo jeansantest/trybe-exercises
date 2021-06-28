@@ -9,44 +9,52 @@
   </head>
   <body>
     <div>
-      Clicou <span id="value"></span> vezes.
+      Contador: <span id="value">0</span>.
       <br />
+      <input type="text" id="quantity"></input>
       <button id="increment">+</button>
       <button id="decrement">-</button>
+      <p><span id="clicks">0</span> vezes clicadas</p>
     </div>
     <script>
       const store = Redux.createStore(contadorReducer);
-      function contadorReducer(state = { contador: 0 }, action) {
+
+      function contadorReducer(state = {contador: 0, clicks: 0, arrayContador: []}, action) {
         switch (action.type) {
           case 'INCREMENT':
-            return state.contador + action.value;
-            break;
+            return {contador: state.contador + action.value, clicks: state.clicks + action.click, arrayContador: ([...state.arrayContador, state.contador + action.value]||[state.contador + action.value])};
           case 'DECREMENT':
-            return state.contador - action.value;
+            return {contador: state.contador - action.value, clicks: state.clicks + action.click, arrayContador: ([...state.arrayContador, state.contador + action.value]||[state.contador + action.value])};
           default:
             return state;
-            break;
-        }
-        if (action.type === 'INCREMENT') {
-          return state + action.value;
         }
       }
+
+      document.getElementById('quantity').addEventListener('change', ({target}) => {
       document.getElementById('increment').addEventListener('click', () => {
         store.dispatch({
           type: 'INCREMENT',
-          value: 1,
+          value: Number(target.value),
+          click: 1,
         });
       });
       document.getElementById('decrement').addEventListener('click', () => {
         store.dispatch({
           type: 'DECREMENT',
-          value: 1,
+          value: Number(target.value),
+          click: 1,
         });
       });
+    })
       //subscribe fica escutando o store e fazendo as alterações no HTML.
       store.subscribe(
-        () => (document.getElementsById('value').innerHTML = store.getState())
+        () => {
+          console.log(store.getState())
+          document.getElementById('value').innerHTML = store.getState().contador
+          document.getElementById('clicks').innerHTML = store.getState().clicks
+        }
       );
+
     </script>
   </body>
 </html>
