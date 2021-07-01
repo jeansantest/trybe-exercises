@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function Client({ login }) {
+function Client({ login, registers }) {
   if (!login.email && !login.password) {
     return (
       <div>
@@ -16,11 +16,35 @@ function Client({ login }) {
       </div>
     );
   }
-  return <div>Passou</div>;
+  if (registers.length < 1) {
+    return (
+      <div>
+        Sem clientes cadastrados <Link to="/register">Cadastre-se</Link>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <Link to="/register">Cadastrar</Link>
+      <div>
+        {registers.map((register, index) => {
+          return (
+            <div key={register.email}>
+              <p>ID de registro: {index}</p>
+              <p>{register.email}</p>
+              <p>{register.name}</p>
+              <p>{register.age}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => ({
   login: state.loginReducer,
+  registers: state.registerReducer,
 });
 
 export default connect(mapStateToProps)(Client);
