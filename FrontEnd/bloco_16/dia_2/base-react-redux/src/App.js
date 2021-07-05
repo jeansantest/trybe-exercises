@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Input from './components/Input';
 import { selectedTodo } from './actions';
+import Organize from './components/Organize';
 import './App.css';
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Input />
+        <Organize />
         <ol>
           {todo.map((e, i) => (
             <li

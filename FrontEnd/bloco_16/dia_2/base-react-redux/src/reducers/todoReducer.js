@@ -1,11 +1,23 @@
-import { ADD_TODO, COMPLETED_TODO, SELECTED_TODO } from '../actions';
+import {
+  ADD_TODO,
+  COMPLETED_TODO,
+  SELECTED_TODO,
+  COMPLETED_ORGANIZE,
+} from '../actions';
 
 const INITIAL_STATE = {
   todo: [],
+  organize: 'all',
 };
 
 function todoReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case COMPLETED_ORGANIZE:
+      return {
+        ...state,
+        todo: state.todo.filter((e) => e.completed),
+        organize: 'completed',
+      };
     case ADD_TODO:
       return {
         ...state,
