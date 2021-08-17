@@ -1,0 +1,13 @@
+Exercício 4 : Analise a tabela city e encontre a tabela à qual a coluna country_id faz referência.
+R: A coluna faz referência com a tabela country
+
+Exercício 5 : Após resolver o exercício anterior, responda: qual tipo de relacionamento a tabela city faz com a tabela country ?
+R: O tipo de relacionamento entre city e country é muitos pra um (N:1)
+
+Exercício 6 : Qual tipo de relacionamento a tabela country faz com a tabela city ?
+R: O tipo de relacionamento entre country e city é um pra muitos (1:N)
+
+Exercício 7 : Abra tabela por tabela do banco sakila e encontre no mínimo 3 exemplos de um relacionamentos 1:N ou N:1.
+R:
+muitos pra um (1:N) = country to city, film to language
+um pra muitos (N:1) = city to country, staff to address, staff to store, language to film
