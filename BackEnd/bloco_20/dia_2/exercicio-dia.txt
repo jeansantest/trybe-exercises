@@ -8,6 +8,12 @@ R: SELECT 2 AS NUM1, 4 AS NUM2, 5 AS NUM3
 R: SELECT 10 + 15 AS SUM
 
 4- Escreva uma query para exibir o resultado de uma expressão aritmética qualquer.
+R: SELECT 30 / 15 AS DIVISION
 
+5- Escreva uma query para exibir todas as informações de todos os cientistas.
+R: SELECT * FROM scientists
+
+6- Escreva uma query para exibir o nome como "Nome do Projeto" e as horas como "Tempo de Trabalho" de cada projeto.
+R: SELECT Name as 'Nome do Projeto', Hours as 'Tempo de Trabalho' FROM projects
 
 
