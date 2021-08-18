@@ -28,3 +28,8 @@ R: 	SELECT Name FROM projects
 R: 	SELECT 
 	CONCAT('O projeto ', Name, ' precisou de ', Hours, ' horas para ser concluído.') AS message 
 	FROM projects
+
+10- Escreva uma query para exibir o nome e as horas dos três projetos com a maior quantidade de horas.
+R: 	SELECT Name, Hours FROM projects
+	ORDER BY Hours DESC
+	LIMIT 3
