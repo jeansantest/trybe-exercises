@@ -46,3 +46,8 @@ R: 	SELECT Name FROM projects
 R: 	SELECT Name FROM projects
 	ORDER BY Hours DESC
 	LIMIT 1 OFFSET 1
+
+14- Escreva uma query para exibir todas as informações dos cinco projetos com a menor quantidade de horas.
+R: 	SELECT * FROM projects
+	ORDER BY Hours ASC
+	LIMIT 5
