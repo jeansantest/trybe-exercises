@@ -1,0 +1,13 @@
+1- Escreva uma query para exibir a string "This is SQL Exercise, Practice and Solution".
+R: SELECT 'This is SQL Exercise, Practice and Solution' AS sql_exercises;
+
+2- Escreva uma query para exibir três números em três colunas.
+R: SELECT 2 AS NUM1, 4 AS NUM2, 5 AS NUM3
+
+3- Escreva uma query para exibir a soma dos números 10 e 15.
+
+
+4- Escreva uma query para exibir o resultado de uma expressão aritmética qualquer.
+
+
+
