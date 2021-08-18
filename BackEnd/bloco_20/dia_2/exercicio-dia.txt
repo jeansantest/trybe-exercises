@@ -36,3 +36,8 @@ R: 	SELECT Name, Hours FROM projects
 
 11- Escreva uma query para exibir o código de todos os projetos da tabela AssignedTo sem que haja repetições.
 R: 	SELECT DISTINCT Project FROM assignedto
+
+12- Escreva uma query para exibir o nome do projeto com maior quantidade de horas.
+R: 	SELECT Name FROM projects
+	ORDER BY Hours DESC
+	LIMIT 1
