@@ -15,3 +15,8 @@ R: 	SELECT Provider, Price FROM provides
 R: 	SELECT * FROM provides 
 	WHERE Provider LIKE 'HAL'
 	ORDER BY Price DESC
+
+5- Escreva uma query para exibir por quantas empresas a peça 1 é provida.
+R: 	SELECT COUNT(*) AS quantity 
+	FROM provides 
+	WHERE Piece = 1
