@@ -39,3 +39,10 @@ R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as pro
 	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
 	INNER JOIN projects AS p ON a.Project = p.Code
 	WHERE p.Hours BETWEEN 250 AND 800
+
+7- Escreva uma query para exibir o nome e o código de todos os projetos cujo nome NÃO inicie com a letra A .
+R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as project_name, p.Hours as hours
+	FROM scientists AS s
+	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
+	INNER JOIN projects AS p ON a.Project = p.Code
+	WHERE a.Project NOT LIKE 'a%'
