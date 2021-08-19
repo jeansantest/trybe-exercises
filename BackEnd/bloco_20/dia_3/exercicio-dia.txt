@@ -15,3 +15,8 @@ R: 	SELECT peca, fornecedor, preco
 R: 	SELECT * FROM fornecedores
 	WHERE name LIKE '%LTDA'
 	ORDER BY name DESC
+
+5- Escreva uma query para exibir o número de empresas (fornecedores) que contém a letra F no código.
+R: 	SELECT COUNT(*) AS numero_empresas 
+	FROM fornecedores
+	WHERE name LIKE '%F%'
