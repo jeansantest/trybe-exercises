@@ -46,3 +46,10 @@ R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as pro
 	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
 	INNER JOIN projects AS p ON a.Project = p.Code
 	WHERE a.Project NOT LIKE 'a%'
+
+8- Escreva uma query para exibir o nome de todos os projetos cujo código contenha a letra H .
+R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as project_name, p.Hours as hours
+	FROM scientists AS s
+	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
+	INNER JOIN projects AS p ON a.Project = p.Code
+	WHERE a.Project LIKE '%h%'
