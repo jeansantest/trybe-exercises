@@ -1,13 +1,20 @@
 1- Escreva uma query para exibir todas as informações de todos os cientistas que possuam a letra e em seu nome.
-R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as 	project_name, p.Hours as hours
+R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as project_name, p.Hours as hours
 	FROM scientists AS s
 	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
 	INNER JOIN projects AS p ON a.Project = p.Code
 	WHERE s.Name LIKE '%e%'
 
 2- Escreva uma query para exibir o nome de todos os projetos cujo o código inicie com a letra A . Ordene o resultado em ordem alfabética.
-R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as 	project_name, p.Hours as hours
+R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as project_name, p.Hours as hours
 	FROM scientists AS s
 	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
 	INNER JOIN projects AS p ON a.Project = p.Code
 	WHERE p.Code LIKE 'a%'
+
+3- Escreva uma query para exibir o código e nome de todos os projetos que possuam em seu código o número 3 . Ordene o resultado em ordem alfabética.
+R: 	SELECT s.SSN, s.Name as scientists, a.Project as project_code, p.Name as project_name, p.Hours as hours
+	FROM scientists AS s
+	INNER JOIN assignedto AS a ON s.SSN = a.Scientist
+	INNER JOIN projects AS p ON a.Project = p.Code
+	WHERE p.Code LIKE '%3%'
