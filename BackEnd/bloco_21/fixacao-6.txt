@@ -7,3 +7,8 @@ R: 	SELECT active, COUNT(*)
 R: 	SELECT store_id, COUNT(*) as pessoas, IF(active = 0, 'Inativo', 'Ativo') AS 'ativo ou inativo'
 	FROM sakila.customer
 	GROUP BY store_id, active
+
+3- Monte uma query que exiba a média de duração de locação por classificação indicativa ( rating ) dos filmes cadastrados na tabela sakila.film . Os resultados devem ser agrupados pela classificação indicativa e ordenados da maior média para a menor.
+R: 	SELECT rating, AVG(rental_duration) as media_duracao FROM sakila.film
+	GROUP BY rating
+	ORDER BY media_duracao DESC
