@@ -25,3 +25,9 @@ R: 	SELECT rating, AVG(length) as tamanho_medio
 	FROM sakila.film
 	GROUP BY rating
 	HAVING tamanho_medio BETWEEN 115 AND 121.50
+
+2- Usando a query a seguir, exiba apenas os valores de custo de substituição que estão acima de $3950.50. Dê um alias que faça sentido para SUM(replacement_cost) , de forma que deixe a query mais legível. Finalize ordenando os resultados de forma crescente.
+R: 	SELECT rating, SUM(replacement_cost) AS custo_de_substituição
+	FROM sakila.film
+	GROUP by rating
+	HAVING custo_de_substituição > 3950.50
