@@ -2,3 +2,8 @@
 R: 	SELECT active, COUNT(*)
 	FROM sakila.customer
 	GROUP BY active;
+
+2- Monte uma query para a tabela sakila.customer que exiba a quantidade de clientes ativos e inativos por loja. Os resultados devem conter o ID da loja , o status dos clientes (ativos ou inativos) e a quantidade de clientes por status .
+R: 	SELECT store_id, COUNT(*) as pessoas, IF(active = 0, 'Inativo', 'Ativo') AS 'ativo ou inativo'
+	FROM sakila.customer
+	GROUP BY store_id, active
