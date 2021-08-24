@@ -17,3 +17,11 @@ R: 	SELECT rating, AVG(rental_duration) as media_duracao FROM sakila.film
 R: 	SELECT district, COUNT(*) AS quantidade_endereços FROM sakila.address
 	GROUP BY district
 	ORDER BY quantidade_endereços DESC
+
+Para fixar
+
+1- Usando a query a seguir, exiba apenas as durações médias que estão entre 115.0 a 121.50. Além disso, dê um alias (apelido) à coluna gerada por AVG(length) , de forma que deixe a query mais legível. Finalize ordenando os resultados de forma decrescente.
+R: 	SELECT rating, AVG(length) as tamanho_medio
+	FROM sakila.film
+	GROUP BY rating
+	HAVING tamanho_medio BETWEEN 115 AND 121.50
