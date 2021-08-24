@@ -9,3 +9,8 @@ R: 	SELECT FLOOR(39.494)
 
 4- Temos uma taxa de inscrição de 85.234% no curso de fotografia para iniciantes. Qual é o valor aproximado para cima dessa média?
 R: 	SELECT CEIL(85.234)
+
+DESAFIOS COM DIV E MOD
+
+1- Monte uma query usando o MOD juntamente com o IF para descobrir se o valor 15 é par ou ímpar. Chame essa coluna de 'Par ou Ímpar' , onde ela pode dizer 'Par' ou 'Ímpar'.
+R: 	SELECT 15 AS valor, IF(15 MOD 2 = 0, 'Par', 'Ímpar') AS 'par ou impar'
