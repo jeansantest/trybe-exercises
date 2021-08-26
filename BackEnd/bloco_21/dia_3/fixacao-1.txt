@@ -13,3 +13,9 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+-- call procedure
+
+CALL ExibirDezAtoresMaisPopulares()
+
+2- 
