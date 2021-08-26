@@ -37,3 +37,27 @@ DELIMITER ;
 -- call procedure
 
 CALL MostrarFilmePorCategoria('Action')
+
+3- Monte uma procedure que receba o email de um cliente como parâmetro de entrada e diga se o cliente está ou não ativo, através de um parâmetro de saída.
+R: 
+USE sakila
+DELIMITER $$
+
+CREATE PROCEDURE ClienteEstaAtivoPorEmail(
+	IN email_param VARCHAR(200),
+    OUT isActive VARCHAR(50)
+)
+BEGIN
+	SELECT IF(active = 1, 'Está ativo', 'Está inativo') as 'ativo ou inativo'
+    FROM customer
+    WHERE email = email_param
+	INTO isActive;
+END $$
+
+DELIMITER ;
+
+-- call procedure
+
+SELECT @isActive;
+CALL ClienteEstaAtivoPorEmail('SANDRA.MARTIN@sakilacustomer.org', @isActive);
+SELECT @isActive as 'está ativo?';
