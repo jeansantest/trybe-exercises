@@ -3,3 +3,6 @@ db.bios.find({_id: 8});
 
 // Exercicio 2
 db.bios.find({_id: 8}, {_id: 1, name: 1});
+
+// Exercicio 3
+db.bios.find({_id: 8}, {birth: 1, name: 1});
