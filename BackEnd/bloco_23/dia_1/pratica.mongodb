@@ -15,3 +15,14 @@ db.bios.find().limit(3).pretty();
 
 // Exercicio 6
 db.bios.find().limit(2).skip(5).pretty();
+
+// Exercicio 7
+use('books');
+db.books.count();
+
+// Exercicio 8
+use('books');
+db.books.find({status: 'PUBLISH'});
+
+// Exercicio 9
+db.books.find({}, {_id: 0, title: 1, isbn: 1, pageCount: 1}).limit(3);
