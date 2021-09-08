@@ -1,19 +1,25 @@
 // Exercicio 1
+use('test');
 db.bios.find({_id: 8});
 
 // Exercicio 2
+use('test');
 db.bios.find({_id: 8}, {_id: 1, name: 1});
 
 // Exercicio 3
-db.bios.find({_id: 8}, {birth: 1, name: 1});
+use('test');
+db.bios.find({_id: 8}, {birth: 1, name: 1, _id: 0});
 
 // Exercicio 4
+use('test');
 db.bios.find({'name.first': 'John'}).pretty();
 
 // Exercicio 5
+use('test');
 db.bios.find().limit(3).pretty();
 
 // Exercicio 6
+use('test');
 db.bios.find().limit(2).skip(5).pretty();
 
 // Exercicio 7
