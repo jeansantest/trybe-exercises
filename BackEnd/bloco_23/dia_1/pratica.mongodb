@@ -1,0 +1,39 @@
+// Exercicio 1
+use('test');
+db.bios.find({_id: 8});
+
+// Exercicio 2
+use('test');
+db.bios.find({_id: 8}, {_id: 1, name: 1});
+
+// Exercicio 3
+use('test');
+db.bios.find({_id: 8}, {birth: 1, name: 1, _id: 0});
+
+// Exercicio 4
+use('test');
+db.bios.find({'name.first': 'John'}).pretty();
+
+// Exercicio 5
+use('test');
+db.bios.find().limit(3).pretty();
+
+// Exercicio 6
+use('test');
+db.bios.find().limit(2).skip(5).pretty();
+
+// Exercicio 7
+use('books');
+db.books.count();
+
+// Exercicio 8
+use('books');
+db.books.find({status: 'PUBLISH'});
+
+// Exercicio 9
+use('books');
+db.books.find({}, {_id: 0, title: 1, isbn: 1, pageCount: 1}).limit(3);
+
+// Exercicio 10
+use('books');
+db.books.find({status: "MEAP"}, {_id: 1, title: 1, authors: 1, status: 1}).limit(10).skip(5);
