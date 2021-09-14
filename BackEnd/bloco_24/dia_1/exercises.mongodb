@@ -1,0 +1,69 @@
+use('class');
+// db.movies.insertMany([{
+//   "title": "Batman",
+//   "category": [ "action", "adventure" ],
+//   "imdbRating": 7.6,
+//   "budget": 35
+// },
+// {
+//   "title": "Godzilla",
+//   "category": [ "action", "adventure", "sci-fi" ],
+//   "imdbRating": 6.6
+// },
+// {
+//   "title": "Home Alone",
+//   "category": [ "family", "comedy" ],
+//   "imdbRating": 7.4
+// }]);
+
+// Exercicio 1
+db.movies.updateOne({title: 'Batman'}, {$set: {imdbRating: 7.7}});
+db.movies.find();
+
+// Exercicio 2
+db.movies.updateOne({title: 'Godzilla'}, {$set: {budget: 1}});
+db.movies.find();
+
+// Exercicio 3
+db.movies.updateOne({title: 'Home Alone'}, {$set: {budget: 15, imdbRating: 5.5}});
+db.movies.find();
+
+// Exercicio 4
+db.movies.updateOne({title: 'Batman'}, {$inc: {imdbRating: 2}});
+db.movies.find();
+
+// Exercicio 5
+db.movies.updateOne({title: 'Home Alone'}, {$inc: {budget: 5}});
+db.movies.find();
+
+// Exercicio 6
+db.movies.updateOne({title: 'Batman'}, {$mul: {imdbRating: 4}});
+db.movies.find();
+
+// Exercicio 7
+db.movies.updateOne({title: 'Batman'}, {$rename: {budget: 'estimatedBudget'}});
+db.movies.find();
+
+// Exercicio 8
+db.movies.updateOne({title: 'Home Alone'}, {$min: {budget: 5}});
+db.movies.find();
+
+// Exercicio 9
+db.movies.updateOne({title: 'Godzilla'}, {$max: {imdbRating: 8.6}, $set: {'category.1': 'thriller'}});
+db.movies.find();
+
+// Exercicio 10
+db.movies.updateOne({title: 'Home Alone'}, {$currentDate: {lastUpdated: true, timestamp: { $type: "timestamp" }}});
+db.movies.find();
+
+// Exercicio 11
+db.movies.updateMany({}, {$set: {sequels: 0}});
+db.movies.find();
+
+// Exercicio 12
+db.movies.updateMany({}, {$unset: {estimatedBudget: '', budget: ''}});
+db.movies.find();
+
+// Exercicio 13
+db.movies.updateMany({title: {$in: ['Batman', 'Home Alone']}}, {$max: {imdbRating: 17}});
+db.movies.find();
