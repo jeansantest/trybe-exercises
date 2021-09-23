@@ -12,6 +12,8 @@ const sorteio = (num) => {
 const sorteioLog = () => {
   const num = readline.questionInt('Qual seu número para o sorteio? (1 a 10) ');
   console.log(sorteio(num));
+  const repeat = readline.keyInYN('Quer tentar novamente?');
+  if (repeat) sorteioLog(num);
 };
 
 sorteioLog();
