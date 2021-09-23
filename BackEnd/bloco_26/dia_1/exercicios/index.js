@@ -32,7 +32,11 @@ if (queries[index] === 'imc') {
   console.log(sorteio(num));
 } else if (queries[index] === 'fatorial') {
   const numFatorial = readline.questionInt('Número para fazer fatorial: ');
-  console.log(
-    `O resultado do fatorial de ${numFatorial} é ${fatorial(numFatorial)}`
-  );
+  if (numFatorial > 0) {
+    console.log(
+      `O resultado do fatorial de ${numFatorial} é ${fatorial(numFatorial)}`
+    );
+  } else {
+    console.log('Use um número válido para o fatorial');
+  }
 }
