@@ -3,9 +3,10 @@ const imc = require('./imc');
 const imcClass = require('./imcClass');
 const velocidade = require('./velocidade');
 const sorteio = require('./sorteio');
+const fatorial = require('./fatorial');
 const round = require('./round');
 
-const queries = ['imc', 'velocidade', 'sorteio'];
+const queries = ['imc', 'velocidade', 'sorteio', 'fatorial'];
 const index = readline.keyInSelect(queries, 'Which query?');
 
 if (queries[index] === 'imc') {
@@ -29,4 +30,9 @@ if (queries[index] === 'imc') {
 } else if (queries[index] === 'sorteio') {
   const num = readline.questionInt('Qual seu número para o sorteio? (1 a 10) ');
   console.log(sorteio(num));
+} else if (queries[index] === 'fatorial') {
+  const numFatorial = readline.questionInt('Número para fazer fatorial: ');
+  console.log(
+    `O resultado do fatorial de ${numFatorial} é ${fatorial(numFatorial)}`
+  );
 }
