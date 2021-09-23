@@ -1,0 +1,21 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "Exercises 26.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "fibonacci": "node fibonacci.js",
+    "fatorial": "node fatorial.js",
+    "sorteio": "node sorteio.js",
+    "velocidade": "node velocidade.js",
+    "imc": "node imc.js"
+  },
+  "keywords": [],
+  "author": "Jean Esteves",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
