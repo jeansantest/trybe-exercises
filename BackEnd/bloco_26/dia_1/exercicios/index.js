@@ -4,9 +4,10 @@ const imcClass = require('./imcClass');
 const velocidade = require('./velocidade');
 const sorteio = require('./sorteio');
 const fatorial = require('./fatorial');
+const fibonacciLog = require('./fibonacci');
 const round = require('./round');
 
-const queries = ['imc', 'velocidade', 'sorteio', 'fatorial'];
+const queries = ['imc', 'velocidade', 'sorteio', 'fatorial', 'fibonacci'];
 const index = readline.keyInSelect(queries, 'Which query?');
 
 if (queries[index] === 'imc') {
@@ -37,6 +38,8 @@ if (queries[index] === 'imc') {
       `O resultado do fatorial de ${numFatorial} é ${fatorial(numFatorial)}`
     );
   } else {
-    console.log('Use um número válido para o fatorial');
+    console.log('Use um número acima de 0 para o fatorial');
   }
+} else if (queries[index] === 'fibonacci') {
+  fibonacciLog().forEach((e) => console.log(e));
 }
