@@ -2,9 +2,10 @@ const readline = require('readline-sync');
 const imc = require('./imc');
 const imcClass = require('./imcClass');
 const velocidade = require('./velocidade');
+const sorteio = require('./sorteio');
 const round = require('./round');
 
-const queries = ['imc', 'velocidade'];
+const queries = ['imc', 'velocidade', 'sorteio'];
 const index = readline.keyInSelect(queries, 'Which query?');
 
 if (queries[index] === 'imc') {
@@ -15,8 +16,7 @@ if (queries[index] === 'imc') {
       imc(peso, altura)
     )}`
   );
-}
-if ((queries[index] = 'velocidade')) {
+} else if (queries[index] === 'velocidade') {
   const distancia = readline.questionInt(
     'Qual a distância percorrida? (metros) '
   );
@@ -26,4 +26,7 @@ if ((queries[index] = 'velocidade')) {
   console.log(
     `\nSua velocidade média é de ${round(velocidade(distancia, tempo), 2)} m/s`
   );
+} else if (queries[index] === 'sorteio') {
+  const num = readline.questionInt('Qual seu número para o sorteio? (1 a 10) ');
+  console.log(sorteio(num));
 }
