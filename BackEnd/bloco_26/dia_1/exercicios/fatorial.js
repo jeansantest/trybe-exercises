@@ -13,4 +13,6 @@ const fatorialLog = () => {
   }
 };
 
-module.exports = fatorialLog;
+fatorialLog();
+
+module.exports = fatorial;

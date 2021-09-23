@@ -16,4 +16,6 @@ const fibonacciLog = () => {
   return termos;
 };
 
-module.exports = fibonacciLog;
+fibonacciLog().forEach((e) => console.log(e));
+
+module.exports = fibonacci;
