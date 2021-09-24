@@ -1,0 +1,1 @@
+Finalmente teste estou usando Promise.all !!!
