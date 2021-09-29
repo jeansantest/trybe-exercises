@@ -97,6 +97,28 @@ app.put('/simpsons/:id', async (req, res) => {
   res.status(204).end();
 });
 
+app.delete('/simpsons/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const simpsons = await fs
+    .readFile('simpsons.json', 'utf8')
+    .then((response) => JSON.parse(response))
+    .catch((err) => res.status(500).json(err));
+  const simpsonsIndex = simpsons.findIndex((s) => s.id === id);
+
+  if (simpsonsIndex === -1) {
+    return res.status(404).json({ message: 'Simpsons not found!' });
+  }
+
+  simpsons.splice(simpsonsIndex, 1);
+  await fs
+    .writeFile('simpsons.json', JSON.stringify(simpsons))
+    .then(() => console.log('Escrito com sucesso'))
+    .catch((err) => console.log(err.message));
+
+  res.status(204).end();
+});
+
 app.post('/signup', (req, res) => {
   const { email, password, firstName, phone } = req.body;
 
