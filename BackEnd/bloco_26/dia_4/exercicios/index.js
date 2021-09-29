@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const authMiddleware = require('./authMiddleware');
 const fs = require('fs').promises;
 
 const app = express();
 app.use(bodyParser.json());
-
-const users = [];
+app.use(authMiddleware);
+app.use(function (err, req, res, next) {
+  res.status(500).send(`Algo deu errado! Mensagem: ${err.message}`);
+});
 
 app.get('/ping', (req, res) => {
   res.json({ message: 'pong' });
