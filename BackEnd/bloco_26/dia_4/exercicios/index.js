@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const authMiddleware = require('./authMiddleware');
+const crypto = require('crypto');
 const fs = require('fs').promises;
 
 const app = express();
 app.use(bodyParser.json());
-app.use(authMiddleware);
+// app.use(authMiddleware);
 app.use(function (err, req, res, next) {
   res.status(500).send(`Algo deu errado! Mensagem: ${err.message}`);
 });
@@ -73,5 +74,43 @@ app.post('/simpsons', async (req, res) => {
 
   res.status(204).end();
 });
+
+app.put('/simpsons/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+  const simpsons = await fs
+    .readFile('simpsons.json', 'utf8')
+    .then((response) => JSON.parse(response))
+    .catch((err) => res.status(500).json(err));
+  const simpsonsIndex = simpsons.findIndex((s) => s.id === id);
+
+  if (simpsonsIndex === -1) {
+    return res.status(404).json({ message: 'Simpsons not found!' });
+  }
+
+  simpsons[simpsonsIndex] = { name, id };
+  await fs
+    .writeFile('simpsons.json', JSON.stringify(simpsons))
+    .then(() => console.log('Escrito com sucesso'))
+    .catch((err) => console.log(err.message));
+
+  res.status(204).end();
+});
+
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if ([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: 'missing fields' });
+  }
+
+  const token = crypto.randomBytes(8).toString('hex');
+
+  res.status(200).json({ token });
+});
+
+app.all('*', (req, res) =>
+  res.json({ message: `Não encontrado caminho ${req.path}` })
+);
 
 app.listen(3002, () => console.log('Aplicação na porta 3002'));
