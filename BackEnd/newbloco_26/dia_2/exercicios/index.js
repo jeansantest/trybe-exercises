@@ -1,17 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
+const PORT = process.env.PORT || 3000;
+const Cep = require('./controllers/Cep');
+const errorMiddleware = require('./middlewares/error.js');
+
+app.use(express.json());
 
 app.get('/ping', (req, res) => res.status(200).json({ message: 'pong' }));
 
-app.get('/cep/:cep', (req, res) => {
-  const { cep } = req.params;
-  if (!/\d{5}-?\d{3}/.test(cep))
-    return res
-      .status(400)
-      .json({ error: { code: 'invalidData', message: 'CEP inválido' } });
+app.get('/cep/:cep', Cep.findAddressByCep);
+app.post('/cep', Cep.create);
 
-  res.status(200).json({ message: 'minha pika no teu rabo' });
-});
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.use(errorMiddleware);
+app.listen(PORT, () => console.log(`Example app listening on PORT ${PORT}!`));
